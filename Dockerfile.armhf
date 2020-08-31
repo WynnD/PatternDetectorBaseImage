@@ -6,5 +6,5 @@ COPY qemu-arm-static /usr/bin/
 
 COPY requirements.txt .
 
-RUN apt-get install python3-pandas python3-numpy python3-lxml && \
+RUN apt-get --update install python3-pandas python3-numpy python3-lxml && \
     pip install -r requirements.txt
