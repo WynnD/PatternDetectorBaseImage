@@ -1,5 +1,7 @@
 FROM python:3.8-alpine
 
+COPY requirements.txt .
+
 RUN mkdir -p /etc/apk && echo "http://dl-8.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
 RUN apk --no-cache --update add gcc gfortran build-base wget freetype-dev libpng-dev openblas-dev libxml2-dev libxslt-dev musl-dev
