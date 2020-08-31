@@ -1,7 +1,5 @@
 FROM arm32v7/python:3.8-slim-buster
 
-ENV PYTHONPATH=/usr/lib/python3.8/site-packages
-
 COPY qemu-arm-static /usr/bin/
 
 COPY requirements.txt .
