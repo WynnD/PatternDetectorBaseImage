@@ -1,5 +1,7 @@
 FROM python:3.8-slim-buster
 
+ENV PYTHONPATH=/usr/lib/python3.8/dist-packages
+
 COPY requirements.txt .
 
 RUN apt-get update && apt-get -y install python3-pandas python3-numpy python3-lxml && \
