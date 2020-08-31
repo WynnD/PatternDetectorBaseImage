@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.8-slim-buster
 
 ENV PYTHONPATH=/usr/lib/python3.8/site-packages
 
