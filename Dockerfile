@@ -6,7 +6,7 @@ COPY requirements.txt .
 
 RUN mkdir -p /etc/apk && echo "http://dl-8.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
-RUN apk --no-cache --update add libxml2-dev libxslt-dev py3-pandas py3-numpy
+RUN apk --no-cache --update add libxml2 libxslt py3-pandas py3-numpy
 
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h
 
