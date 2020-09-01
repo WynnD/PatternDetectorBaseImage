@@ -1,4 +1,4 @@
-FROM python:3.8-alpine
+FROM python:3.8-alpine3.12
 
 ENV PYTHONPATH=/usr/lib/python3.8/site-packages
 
