@@ -2,4 +2,6 @@ FROM python:3.7-slim-buster
 
 COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+RUN apt-get --update --no-cache -y install libatlas-base-dev && \
+    pip install -r requirements.txt && \
+    apt-get -y autoremove
