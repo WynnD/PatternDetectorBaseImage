@@ -1,15 +1,7 @@
-FROM arm32v7/python:3.8-alpine
-
-ENV PYTHONPATH=/usr/lib/python3.8/site-packages
+FROM arm32v7/python:3.8-slim
 
 COPY qemu-arm-static /usr/bin/
 
 COPY requirements.txt .
 
-RUN mkdir -p /etc/apk && echo "http://dl-8.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-
-RUN apk --no-cache --update add --virtual .build-deps gcc python3-dev build-base && \
-    apk --no-cache --update add py3-pandas py3-numpy py3-numpy-dev py3-lxml libatlas-base-dev && \
-    ln -s /usr/include/locale.h /usr/include/xlocale.h && \
-    pip install -r requirements.txt && \
-    apk del .build-deps
+RUN pip install -r requirements.txt
